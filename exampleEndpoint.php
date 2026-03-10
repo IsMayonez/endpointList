@@ -11,14 +11,14 @@ if(isset($_GET['arg1']) && isset($_GET['arg2'])) {
     //$timemessage = 0
     if(isset($_GET['duration'])) {
         sleep((int)$_GET['duration']);
-        $timemessage = $_GET['duration']
+        //$timemessage = $_GET['duration']
     }
     
     $response = [
         'status' => 'success',
         'message' => 'Works',
         'combined_result' => $combinedString
-        'waited for' => $timemessage
+        //'waited for' => $timemessage
     ];
 
     http_response_code(200);
