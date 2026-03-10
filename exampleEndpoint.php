@@ -1,19 +1,24 @@
 <?php
 header('Content-Type: application/json');
 
-if(isset($_GET['duration'])) {
-    sleep((int)$_GET['duration']);
-}
+
 
 if(isset($_GET['arg1']) && isset($_GET['arg2'])) {
     $param1 = $_GET['arg1'];
     $param2 = $_GET['arg2'];
 
     $combinedString = $param1 . ' ' . $param2;
+    $timemessage = 0
+    if(isset($_GET['duration'])) {
+        sleep((float)$_GET['duration']);
+        $timemessage = (float)$_GET['duration']
+    }
+    
     $response = [
         'status' => 'success',
-        'message' => 'Parameters received',
+        'message' => 'Works',
         'combined_result' => $combinedString
+        'waited for' => $timemessage
     ];
 
     http_response_code(200);
