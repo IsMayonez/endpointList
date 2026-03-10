@@ -10,8 +10,8 @@ if(isset($_GET['arg1']) && isset($_GET['arg2'])) {
     $combinedString = $param1 . ' ' . $param2;
     $timemessage = 0
     if(isset($_GET['duration'])) {
-        sleep((float)$_GET['duration']);
-        $timemessage = (float)$_GET['duration']
+        sleep((int)$_GET['duration']);
+        $timemessage = $_GET['duration']
     }
     
     $response = [
