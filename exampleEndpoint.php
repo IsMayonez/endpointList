@@ -1,6 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
+if(isset($_GET['duration'])) {
+    sleep((int)$_GET['duration']);
+}
+
 if(isset($_GET['arg1']) && isset($_GET['arg2'])) {
     $param1 = $_GET['arg1'];
     $param2 = $_GET['arg2'];
